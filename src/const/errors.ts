@@ -1,0 +1,1 @@
+export const NO_ALGORITHM_DETECTED_ERROR = "No Algorithm was detected on the MP!"
