@@ -1,16 +1,15 @@
 import { Process } from "../classes/Process";
-import { getRandomPhaseLength } from "./getRandomPhaseLength";
+import { getRandomAverageWaitingTime } from "./getRandomAverageWaitingTime";
 
-export const generateTestSequence = (numProcesses: number, maxReportingTime: number): Process[] =>{
+export const generateTestSequence = (numProcesses: number, maxAverageWaitingTime: number): Process[] =>{
     const processes: Process[] = [];
     for (let i = 0; i < numProcesses; i++) {
             processes.push({
-            id: i + 1,
-            processorPhaseLength: getRandomPhaseLength(),
-            reportingTime: Math.floor(Math.random() * maxReportingTime),
-            waitingTime: 0,
+                id: i + 1,
+                averageWaitingTime: getRandomAverageWaitingTime(),
+                reportingTime: Math.floor(Math.random() * maxAverageWaitingTime + 1),
+                currentWaitingTime: 0,
         });
     }
-    processes.sort((a, b) => a.reportingTime - b.reportingTime);
     return processes;
 }

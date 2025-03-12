@@ -1,13 +1,13 @@
 export class Process {
     id: number;
-    processorPhaseLength: number;
     reportingTime: number;
-    waitingTime: number;
+    averageWaitingTime: number;
+    currentWaitingTime: number;
 
-    constructor(id: number, processorPhaseLength: number, reportingTime: number, waitingTime=0) {
+    constructor(id: number, reportingTime: number, averageWaitingTime: number, currentWaitingTime=0) {
         this.id = id;
-        this.processorPhaseLength = processorPhaseLength;
         this.reportingTime = reportingTime;
-        this.waitingTime = waitingTime;
+        this.averageWaitingTime = averageWaitingTime;
+        this.currentWaitingTime = currentWaitingTime;
     }
 }

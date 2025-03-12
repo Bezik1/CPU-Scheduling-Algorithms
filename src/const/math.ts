@@ -1,0 +1,1 @@
+export const ROUNDING_BASE = 2
